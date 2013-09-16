@@ -11,6 +11,7 @@ var mongoose = require('mongoose'),
  * Find article by id
  */
 exports.article = function(req, res, next, id) {
+    id = id.split('-')[0];
     Article.load(id, function(err, article) {
         if (err) return next(err);
         if (!article) return next(new Error('Failed to load article ' + id));
