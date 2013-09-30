@@ -73,6 +73,10 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
 
+    var errors = require('../app/controllers/errors');
+    app.get('/errors', auth.requiresLogin, errors.all);
+    app.post('/errors', errors.create);
+
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
