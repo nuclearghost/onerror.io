@@ -24,10 +24,14 @@ exports.article = function(req, res, next, id) {
  * Create an error 
  */
 exports.create = function(req, res) {            
+    //console.log(req);
     var error = new Error(req.body);
 
     //TODO look up company by app id
     //error.company = req.company;
+
+    error.userAgent = req.headers['user-agent'];
+    //error.ipAddress
 
     error.save(function(err) {
         if (err) {
@@ -70,7 +74,7 @@ exports.show = function(req, res) {
  * List of Articles
  */
 exports.all = function(req, res) {
-    Error.find().sort('-created').populate('user').exec(function(err, errors) {
+    Error.find().exec(function(err, errors) {
         if (err) {
             res.render('error', {
                 status: 500

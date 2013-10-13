@@ -27,7 +27,18 @@ var ErrorSchema = new Schema({
     lineNumber: {
         type: Number,
         default: 0
-    }/*,
+    },
+    ipAddress: {
+        type: String,
+        default: '0.0.0.0',
+        trim: true
+    },
+    userAgent: {
+        type: String,
+        default: '',
+        trim: true
+    }
+    /*,
     company: {
         type: Schema.ObjectId,
         ref: 'Company'

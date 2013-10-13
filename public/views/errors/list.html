@@ -1,0 +1,11 @@
+<section data-ng-controller="ErrorsController" data-ng-init="find()">
+	<ul class="errors unstyled">
+		<li data-ng-repeat="error in errors">
+			<span>{{error.created | date:'medium'}}</span> /
+			<span>{{error.user.name}}</span>
+			<h2><a data-ng-href="#!/errors/{{error._id}}">{{error.title}}</a></h2>
+			<div>{{error.content}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!errors || errors.length">No errors! <br></h1>
+</section>
