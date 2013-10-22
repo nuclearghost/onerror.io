@@ -12,7 +12,7 @@
 				message: message
 			}));
 		}
-		return true;
+		return false;
 	}
 
 })();

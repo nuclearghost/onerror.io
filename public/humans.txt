@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Mark Meyer -- Developer -- @NuclearGhost
 
 # THANKS
 
-    <name>
+	The interwebs
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
+    Angular.js
     jQuery, Modernizr
