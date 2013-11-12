@@ -31,7 +31,7 @@ exports.create = function(req, res) {
     //error.company = req.company;
 
     error.userAgent = req.headers['user-agent'];
-    //error.ipAddress
+    error.ipAddress = req.connection.remoteAddress;
 
     error.save(function(err) {
         if (err) {
